@@ -1,0 +1,295 @@
+import React, { useState } from 'react'
+import Newsitem from './Newsitem'
+
+export default function News() {
+  const article = {
+    "status": "ok",
+    "totalResults": 38,
+    "articles": [
+      {
+        "source": {
+          "id": null,
+          "name": "India TV News"
+        },
+        "author": "India TV Entertainment Desk",
+        "title": "Jacqueline Fernandez, Akshay Kumar are all smiles in these UNSEEN pics from 'Bachchhan Paandey' sets - India TV News",
+        "description": "Apart from Akshay Kumar and Jacqueline Fernandez, Bachchhan Paandey also stars Kriti Sanon, Arshad Warsi, Pankaj Tripathi, Prateik Babbar, and Sanjay Mishra. The film is all set to release in cinemas on 18th March.",
+        "url": "https://www.indiatvnews.com/entertainment/celebrities/jacqueline-fernandez-akshay-kumar-unseen-pics-from-bachchhan-paandey-sets-2022-02-19-760502",
+        "urlToImage": "https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/02/pjimage-4-1645278477.jpg",
+        "publishedAt": "2022-02-19T13:49:19Z",
+        "content": "<ul><li>Bachchhan Paandey is all set to release in cinemas on 18th March </li><li>Farhad Samji's directorial is filled with the elements of comedy, action and crime </li></ul>\r\nEver since the trailer… [+1403 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "NDTV News"
+        },
+        "author": null,
+        "title": "Ex-AAP Leader Kumar Vishwas Gets High Security After Arvind Kejriwal Row - NDTV",
+        "description": "The Centre on Saturday decided to give 'Y' category security to former leader of Aam Aadmi Party (AAP) Kumar Vishwas, official sources said.",
+        "url": "https://www.ndtv.com/india-news/kumar-vishwas-gets-round-the-clock-y-category-security-after-arvind-kejriwal-row-2777699",
+        "urlToImage": "https://i.ndtvimg.com/i/2017-06/kumar-vishwas_650x400_61497383486.jpg",
+        "publishedAt": "2022-02-19T13:31:00Z",
+        "content": "The central government had reviewed the security of Kumar Vishwas based on perceived threats.\r\nNew Delhi: The Centre on Saturday decided to give 'Y' category security to former leader of Aam Aadmi Pa… [+878 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "The Siasat Daily"
+        },
+        "author": "IANS",
+        "title": "NASA's Perseverance completes 1st year on Mars - The Siasat Daily",
+        "description": "Washington: NASA's Perseverance rover has successfully completed the first year since touching down on Mars on February 18, 2021. Weighing roughly 1,025 kgs, Perseverance is the heaviest rover ever to safely land on Mars, and also return with dramatic videos …",
+        "url": "https://www.siasat.com/nasas-perseverance-completes-1st-year-on-mars-2278564/",
+        "urlToImage": "https://cdn.siasat.com/wp-content/uploads/2021/10/NASA.jpg",
+        "publishedAt": "2022-02-19T13:24:00Z",
+        "content": "Washington: NASA’s Perseverance rover has successfully completed the first year since touching down on Mars on February 18, 2021.\r\nWeighing roughly 1,025 kgs, Perseverance is the heaviest rover ever … [+2719 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "NDTV News"
+        },
+        "author": null,
+        "title": "Arvind Kejriwal Video Prompts Police Case Order By Punjab Poll Officer - NDTV",
+        "description": "A police case has been filed against Arvind Kejriwal and his Aam Aadmi Party or AAP for a video, which the poll body says makes \"false and frivolous allegations against other parties\" and violates the model code of conduct in Punjab",
+        "url": "https://www.ndtv.com/india-news/police-case-against-arvind-kejriwal-ordered-by-punjab-election-officer-for-calling-opponents-traitors-2777649",
+        "urlToImage": "https://c.ndtvimg.com/2022-02/9tdkrls_arvind-kejriwal_650x400_11_February_22.jpg",
+        "publishedAt": "2022-02-19T13:07:00Z",
+        "content": "The votes will be counted on March 10, along with four other states\r\nA police case has been filed against Arvind Kejriwal and his Aam Aadmi Party or AAP for a video, which the poll body says makes \"f… [+1441 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "Hindustan Times"
+        },
+        "author": "hindustantimes.com",
+        "title": "Shatrughan Sinha on Punjab CM's ‘Bhaiya’ comment: \"It hasn't just upset me...\" - Hindustan Times",
+        "description": "Actor-turned-politician Shatrughan Sinha tweeted, \"Being a Bihari Babu, it hasn't just upset me but hurt many people from other states, UP, Bihar & Delhi too.\"",
+        "url": "https://www.hindustantimes.com/elections/punjab-assembly-election/shatrughan-sinha-on-punjab-cm-s-bhaiya-comment-it-hasn-t-just-upset-me-101645271436253.html",
+        "urlToImage": "https://images.hindustantimes.com/img/2022/02/19/1600x900/_8b24c122-cdc6-11ea-a892-bc0febb83d85_1645275348031.jpg",
+        "publishedAt": "2022-02-19T12:59:45Z",
+        "content": "Actor-turned-politician Shatrughan Sinha on Saturday was the latest leader to criticise Punjab chief minister Charanjit Singh Channi over his dont let bhaiyas from UP, Bihar, Delhi enter here comment… [+1633 chars]"
+      },
+      {
+        "source": {
+          "id": "the-times-of-india",
+          "name": "The Times of India"
+        },
+        "author": "PTI",
+        "title": "Rohit Sharma is new Test captain; selectors start transition with exclusion of Cheteshwar Pujara, Ajinkya - Times of India",
+        "description": "Cricket News: White-ball skipper Rohit Sharma was on Saturday officially named captain of the Indian Test team for the upcoming two-match series against Sri Lanka,",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/sri-lanka-in-india/rohit-sharma-officially-named-test-captain-ajinkya-rahane-cheteshwar-pujara-dropped-from-test-series-against-sri-lanka/articleshow/89686568.cms",
+        "urlToImage": "https://static.toiimg.com/thumb/msid-89686582,width-1070,height-580,imgsize-46962,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+        "publishedAt": "2022-02-19T12:50:00Z",
+        "content": "Rohit Sharma is new Test captain; selectors start transition with exclusion of Cheteshwar Pujara, Ajinkya Rahane, Ishant Sharma, Wriddhiman Saha\r\n<ul><li>News</li>\r\n<li>Sports News</li>\r\n<li>Cricket … [+168 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "NDTV News"
+        },
+        "author": null,
+        "title": "Storm Eunice: 13 Dead, 2 Lakh Homes Still Without Power In UK - 10 Points - NDTV",
+        "description": "Thirteen people were killed by falling trees, flying debris and high winds in Britain, Ireland, the Netherlands, Belgium, Germany and Poland as Storm Eunice carved a deadly trail across Western Europe.",
+        "url": "https://www.ndtv.com/world-news/storm-eunice-13-dead-1-million-households-off-the-grid-10-points-2777629",
+        "urlToImage": "https://c.ndtvimg.com/2022-02/i634jq8s_storm-eunice-afp_625x300_19_February_22.jpg",
+        "publishedAt": "2022-02-19T12:23:00Z",
+        "content": "<li>More than 200,000 British homes are still without power and emergency services are battling to restore it, according to news agency Reuters.\r\n</li><li>A body representing electricity networks in … [+1414 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "Space.com"
+        },
+        "author": "Elizabeth Howell",
+        "title": "A Cygnus cargo spacecraft is launching to orbit today. Here's how to watch live. - Space.com",
+        "description": "Liftoff is scheduled for 12:39 p.m. EST (1739 GMT).",
+        "url": "https://www.space.com/space-station-cygnus-ng-17-cargo-ship-launch",
+        "urlToImage": "https://cdn.mos.cms.futurecdn.net/QVKLr4YaWTXkvBehjiT7mZ-1200-80.jpg",
+        "publishedAt": "2022-02-19T12:22:13Z",
+        "content": "A private Cygnus freighter is set to launch on a resupply mission to the International Space Station (ISS) on Saturday (Feb. 19), and you can watch the whole thing live.\r\nLaunch coverage is scheduled… [+5337 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "Hindustan Times"
+        },
+        "author": "hindustantimes.com",
+        "title": "Akhilesh Yadav's snub to Yogi Adityanath over links to blast convict remark - Hindustan Times",
+        "description": "UP polls: Akhilesh Yadav said that Yogi Adityanath was taking the attention from the key election issues, such as inflation.  | Latest News India",
+        "url": "https://www.hindustantimes.com/india-news/up-polls-akhilesh-yadav-snub-to-yogi-adityanath-on-link-to-blast-convict-remark-101645272642127.html",
+        "urlToImage": "https://images.hindustantimes.com/img/2022/02/19/1600x900/akhilesh_yadav_firozabad_1645086384198_1645272841760.JPG",
+        "publishedAt": "2022-02-19T12:22:01Z",
+        "content": "Akhilesh Yadav, the key challenger to Yogi Adityanath in Uttar Pradesh, on Saturday snubbed the Chief Minister over the remark that the family of one of the convicts of the 2008 Ahmedabad serial blas… [+2336 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "NDTV News"
+        },
+        "author": null,
+        "title": "Amid Ukraine Tensions, Russia Launches Ballistic Missiles In Exercises - NDTV",
+        "description": "Russia on Saturday successfully test-fired its latest hypersonic, cruise and nuclear-capable ballistic missiles as part of \"planned exercises,\" the Kremlin said, as tensions soar over Ukraine.",
+        "url": "https://www.ndtv.com/world-news/amid-ukraine-tensions-russia-says-ballistic-cruise-missiles-launched-in-exercises-news-agency-afp-2777554",
+        "urlToImage": "https://c.ndtvimg.com/2022-02/piisel5_russian-troops_650x400_19_February_22.jpg",
+        "publishedAt": "2022-02-19T12:07:00Z",
+        "content": "The drills included Russia's Black and North Sea navies, along with strategic forces: Kremlin\r\nMoscow: Russia on Saturday successfully test-fired its latest hypersonic, cruise and nuclear-capable bal… [+1183 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "The Indian Express"
+        },
+        "author": "Express News Service",
+        "title": "Students attend classes without hijab as IAS officer turns teacher - The Indian Express",
+        "description": "The Chikkamagaluru deputy commissioner convinces the students of the minority department’s school and parents that the high court order was a temporary one and examinations are round the corner.",
+        "url": "https://indianexpress.com/article/cities/bangalore/students-attend-classes-without-hijab-as-ias-officer-turns-teacher-7780027/",
+        "urlToImage": "https://images.indianexpress.com/2022/02/FotoJet-2022-02-18T164400.043.jpg",
+        "publishedAt": "2022-02-19T11:38:57Z",
+        "content": "As hijab-wearing students were being barred from classrooms elsewhere in Karnataka, in Chikkamagaluru, the deputy commissioner not only persuaded the Muslim students of a school run by the minority w… [+2563 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "Abplive.com"
+        },
+        "author": "ABP News Bureau",
+        "title": "You Are Not Guests, India Is Your Home: PM Modi To Sikh-Hindu Delegation From Afghanistan - ABP Live",
+        "description": "Prime Minister Narendra Modi talked about the immense difficulties faced by people in Afghanistan and the help provided by Centre to bring them to India safely.",
+        "url": "https://news.abplive.com/news/india/pm-narendra-modi-to-sikh-hindu-delegation-from-afghanistan-you-are-not-guests-india-is-your-home-1514142",
+        "urlToImage": "https://feeds.abplive.com/onecms/images/uploaded-images/2022/02/19/fdea6d032bcd617df674439b747501be_original.jpg?impolicy=abp_cdn&imwidth=1200&imheight=628",
+        "publishedAt": "2022-02-19T10:46:22Z",
+        "content": "New Delhi: Prime Minister Narendra Modi on Saturday met members of the Sikh-Hindu Delegation from Afghanistan at his residence, where he welcomed the delegation saying that they are not guests but ar… [+3309 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "Moneycontrol"
+        },
+        "author": null,
+        "title": "Interview | LIC IPO to see ample rush from investors if uncertainties are controlled, says Sonam Srivastava of Wright Research - Moneycontrol.com",
+        "description": "'LIC IPO is already a huge event in the markets. LIC would become one of the top 3 companies by market capitalisation soon after the IPO and would get passive flows and eventual inclusion in the benchmark indices'",
+        "url": "https://www.moneycontrol.com/news/business/markets/interview-lic-ipo-to-see-ample-rush-from-investors-if-uncertainties-are-controlled-says-sonam-srivastava-of-wright-research-8136341.html",
+        "urlToImage": "https://images.moneycontrol.com/static-mcnews/2021/11/Sonam_Srivastava1280-770x433.jpg",
+        "publishedAt": "2022-02-19T10:23:52Z",
+        "content": "The estimated Rs 65,400-crore public issue - the biggest in the history of the Indian capital market - is likely to make LIC one of the top three companies by market capitalisation. The upcoming list… [+6068 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "Hindustan Times"
+        },
+        "author": "Parmita Uniyal",
+        "title": "Lassa fever: Know the symptoms of this deadly infectious disease - Hindustan Times",
+        "description": "Lassa fever: Do we need to worry about new cases of this deadly infection in the UK? What are symptoms, treatment and prevention tips of Lassa fever that we can follow? | Health",
+        "url": "https://www.hindustantimes.com/lifestyle/health/lassa-fever-know-the-symptoms-of-this-deadly-infectious-disease-101645264977406.html",
+        "urlToImage": "https://images.hindustantimes.com/img/2022/02/19/1600x900/lassa_fever_thumb_1645265153964_1645265171858.jpg",
+        "publishedAt": "2022-02-19T10:09:56Z",
+        "content": "Lassa fever that first originated in norther Nigeria in 1969 has made a comeback after almost 13 years in the UK and at least three cases have been confirmed in the country including one death. The a… [+3817 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "Abplive.com"
+        },
+        "author": "ABP News Bureau",
+        "title": "UP Government Lifts Night Curfew After Decline In Covid-19 Cases - ABP Live",
+        "description": "The government of Uttar Pradesh has lifted night curfew in the state following the decline in Covid-19 cases.",
+        "url": "https://news.abplive.com/states/up-uk/breaking-up-government-lifts-night-curfew-after-decline-in-covid-19-cases-1514119",
+        "urlToImage": "https://feeds.abplive.com/onecms/images/uploaded-images/2022/02/19/7589e290b58825bce2ff3b617ec34df5_original.jpg?impolicy=abp_cdn&imwidth=1200&imheight=628",
+        "publishedAt": "2022-02-19T10:06:54Z",
+        "content": "New Delhi: The government of Uttar Pradesh has lifted the night curfew in the state following the decline in Covid-19 cases, news agency ANI reported. \r\nAwanish Kumar Awasthi, who is Additional Chief… [+1370 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "Hindustan Times"
+        },
+        "author": "HT Entertainment Desk",
+        "title": "Farhan Akhtar and Shibani Dandekar wedding live updates: Bride and groom seen in first pic, Hrithik Roshan dances - Hindustan Times",
+        "description": "Farhan Akhtar and Shibani Dandekar wedding live updates: The long-time couple is all set to get married at his parents' house in Khandala.",
+        "url": "https://www.hindustantimes.com/entertainment/bollywood/farhan-akhtar-and-shibani-dandekar-wedding-live-updates-actors-to-tie-the-knot-in-khandala-guests-start-arriving-101645251144516.html",
+        "urlToImage": "https://images.hindustantimes.com/img/2022/02/19/1600x900/farhan_shibani_wedding_1645262188830_1645262189039.jpeg",
+        "publishedAt": "2022-02-19T09:59:10Z",
+        "content": "Actor-filmmaker Farhan Akhtar and his girlfriend, actor-singer Shibani Dandekar are all set to get married. The couple is tying the knot in Khandala at his parents Javed Akhtar and Shabana Azmi's hom… [+2175 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "NDTV News"
+        },
+        "author": null,
+        "title": "Newlywed Couple Vikrant Massey And Sheetal Thakur Receive Love From Taapsee, Mouni Roy, Sonakshi Sinha, And Others - NDTV Movies",
+        "description": "Vikrant Massey and Sheetal Thakur, who got married on February 18, have shared new photos from their wedding",
+        "url": "https://www.ndtv.com/entertainment/newlywed-couple-vikrant-massey-and-sheetal-thakur-receive-love-from-taapsee-mouni-roy-sonakshi-sinha-and-others-2777324",
+        "urlToImage": "https://c.ndtvimg.com/2022-02/d69d58jg_vikrant-massey_625x300_19_February_22.jpg",
+        "publishedAt": "2022-02-19T09:35:59Z",
+        "content": "Still from Vikrant Massey and Sheetal Thakur's wedding (courtesy: vikrantmassey)\r\nHighlights\r\n<ul><li>Vikrant Massey Got married to Sheetal Thakur on February 18\r\n</li><li>The newlywed couple has now… [+1888 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "GSMArena.com"
+        },
+        "author": "Michail",
+        "title": "Xiaomi Redmi Note 11 Pro in for review - GSMArena.com news - GSMArena.com",
+        "description": "It's the 4G version of the Note 11 Pro.",
+        "url": "https://www.gsmarena.com/xiaomi_redmi_note_11_pro_in_for_review-news-53197.php",
+        "urlToImage": "https://fdn.gsmarena.com/imgroot/news/22/02/redmi-note-11-pro-ifr/-952x498w6/gsmarena_002.jpg",
+        "publishedAt": "2022-02-19T09:12:01Z",
+        "content": "A bunch of Xiaomi Redmi Notes were unveiled last month and the Redmi Note 11 Pro is now with us for a quick look around its key features.\r\nRedmi Note 11 Pro features a 6.67-inch AMOLED with FHD+ reso… [+965 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "News18"
+        },
+        "author": "Aparna Deb",
+        "title": "A Scam, Former NSE CEO Chitra Ramakrishnan, Himalayan Yogi and More, All you Need to Know - News18",
+        "description": "NSE Scam: Look-out circulars were issued against Anand Subramanian, Chitra Ramkrishna and Ravi Narain for the ongoing investigation",
+        "url": "https://www.news18.com/news/business/a-scam-former-nse-ceo-chitra-ramakrishnan-himalayan-yogi-and-more-all-you-need-to-know-4788506.html",
+        "urlToImage": "https://images.news18.com/ibnlive/uploads/2022/02/chitra-ramkrishna-nse-164517787816x9.jpg",
+        "publishedAt": "2022-02-19T09:08:52Z",
+        "content": "Central Bureau of Investigation (CBI) on Friday issued lookout circular (LoC) against former Chief Executive Officer (CEO) and Managing Director of NSE Chitra Ramkrishna, her former boss Ravi Narain … [+5314 chars]"
+      },
+      {
+        "source": {
+          "id": null,
+          "name": "Moneycontrol"
+        },
+        "author": null,
+        "title": "India to host 2023 International Olympic Committee session in Mumbai - Moneycontrol",
+        "description": "India will host the IOC Session for the first time in four decades after 1983, when it was last held in Delhi",
+        "url": "https://www.moneycontrol.com/news/india/india-to-host-2023-international-olympic-committee-session-in-mumbai-8136551.html",
+        "urlToImage": "https://images.moneycontrol.com/static-mcnews/2022/02/4-Mrs.-Nita-Ambani-IOC-President-Thomas-Bach-at-Reliance-Foundation-School-in-2018-592x435.jpg",
+        "publishedAt": "2022-02-19T08:54:16Z",
+        "content": "India has won the bid to host the 2023 International Olympic Committee's (IOC) session in Mumbai, in an unopposed race on February 19.\r\nThe Indian delegation made its presentation to IOC members duri… [+3517 chars]"
+      }
+    ]
+  }
+
+  const [newsArticle, setnewsArticles] = useState(article)
+  return (
+    <>
+        <div className='container my-2'>
+            <h2>Top Headlines</h2>
+            <div className="row">
+            {article.articles.map((elem, index)=>{
+                return <div className="col-md-6 my-1" key={elem.url}>
+                    <Newsitem 
+                    title={elem.title} 
+                    description={elem.description}
+                    imageUrl={elem.urlToImage} 
+                    newsURL={elem.url}/>
+                </div>
+            })}
+            
+                
+            </div>
+        
+        </div>
+        
+    </>
+  )
+}
