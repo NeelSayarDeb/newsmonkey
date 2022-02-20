@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export default function Navbar() {
   return (
     <>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
             <Link className="navbar-brand" to="/">NewsMonkey</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,9 +20,6 @@ export default function Navbar() {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/cricket">Cricket</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/wwe">WWE</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/basketball">BasketBall</Link>

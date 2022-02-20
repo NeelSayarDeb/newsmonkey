@@ -18,9 +18,6 @@ export default function App() {
             <Route exact path="/basketball">
               <News key="basketball" query="Basketball"/>
             </Route>
-            <Route exact path="/wwe">
-              <News key="wwe" query="WWE"/>
-            </Route>
             <Route exact path="/cricket">
               <News key="cricket" query="Cricket"/>
             </Route>

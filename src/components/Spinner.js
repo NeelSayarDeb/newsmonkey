@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Spinner() {
   return (
-    <div>Fetching News...</div>
+    <div className='text-center my-4'>Fetching News...</div>
   )
 }
