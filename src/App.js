@@ -1,16 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 
 import React from 'react'
 import Navbar from './components/Navbar';
 import News from './components/News';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 export default function App() {
   return (
-    <>
-    <Navbar/>
-    <News/>
-    </>
+    <Router> 
+      <Navbar/>
+        <Switch>
+            <Route exact path="/basketball">
+              <News key="basketball" query="Basketball"/>
+            </Route>
+            <Route exact path="/wwe">
+              <News key="wwe" query="WWE"/>
+            </Route>
+            <Route exact path="/cricket">
+              <News key="cricket" query="Cricket"/>
+            </Route>
+            <Route exact path="/football">
+              <News key="football" query="Football"/>
+            </Route>
+            <Route exact path="/">
+              <News key="sports" query=""/>
+            </Route>
+        </Switch>
+    </Router>
   )
 }
 
